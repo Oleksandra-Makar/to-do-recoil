@@ -5,7 +5,7 @@ import { todoState } from '../store/todoStore'
 
 const ToDoList = () => {
     const todoList = useRecoilValue(todoState)
-    console.log(todoList)
+
     return (
         <List>
             {todoList.map((todo) => (
