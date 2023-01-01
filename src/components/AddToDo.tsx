@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { FormEvent, useCallback, useState } from 'react'
 import { Button, TextField } from '@mui/material'
 import { useSetRecoilState } from 'recoil'
 import { todoState } from '../store/todoStore'
@@ -10,7 +10,7 @@ const AddToDo = () => {
     const setTodoList = useSetRecoilState(todoState)
 
     const handleSubmit = useCallback(
-        (event: any) => {
+        (event: FormEvent<EventTarget>) => {
             event.preventDefault()
             if (title) {
                 setTodoList((oldTodoList) => [
